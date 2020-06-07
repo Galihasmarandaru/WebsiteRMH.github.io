@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -18,19 +19,22 @@
         <div id="navigation">
             <div id="navigation__list">
                 <img id="img-logo" src="assets/img/logo.jpg">
-                <div id="navigation__list--menu-right">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#about">Who Are We</a>
-                    <a href="#whyus">Why Us</a>
-                    <a href="#business">Business Field</a>
-                    <a href="#news">Our Updates</a>
-                    <a href="#contact">How to Find Us</a>
+                <a href="javascript:void(0);" id="icon" onclick="toggleNavBar()">
+                     <i class="fa fa-bars"> </i>
+               </a>
+                <div id="navigation__list--menu-right" class="navbar">
+                    <a class="active" href="#home" onclick="closeNavBar()">Home</a>
+                    <a href="#about" onclick="closeNavBar()">Who Are We</a>
+                    <a href="#whyus" onclick="closeNavBar()">Why Us</a>
+                    <a href="#business" onclick="closeNavBar()">Business Field</a>
+                    <a href="#news" onclick="closeNavBar()">Our Updates</a>
+                    <a href="#contact" onclick="closeNavBar()">How to Find Us</a>
                 </div>
             </div>
         </div>
         <div class="container home-rhm--container-content">
             <div class="row">
-                <div class="col-5 home-rhm--col-left">
+                <div class="home-rhm--col-left">
                     <div class="home-rhm--col-left-word">
                         <h1>ARE YOU <br>LOOKING FOR A GREAT <br></h1>
                         <h1 class="home-rhm--col-headingbold">PRODUCT &amp; SOLUTION ?</h1>
@@ -42,7 +46,7 @@
                         <div></div>
                     </div>
                 </div>
-                <div class="col-7 home-rhm--col-right"><img class="home-rhm--col-right-img"
+                <div class="home-rhm--col-right"><img class="home-rhm--col-right-img"
                         src="assets/img/img-cover@2x.png"></div>
             </div>
         </div>
@@ -72,8 +76,8 @@
         <h1 class="reason-rhm--heading">Why Us ?</h1>
         <div class="container reason-rhm--content">
             <div data-aos="fade-right" data-aos-duration="1000" class="row reason-rhm--content__left">
-                <div class="col-lg-4 reason-rhm--content__left-column01"><img src="assets/img/whyus01.png"></div>
-                <div class="col-lg-8 reason-rhm--content__left-column02">
+                <div class="col-4 reason-rhm--content__left-column01"><img src="assets/img/whyus01.png"></div>
+                <div class="col-8 reason-rhm--content__left-column02">
                     <div class="reason-rhm--content__left-column02-word">
                         <p class="reason-rhm--content__left-column02-word-heading">Well Trained Marketing</p>
                         <p>We have professional experts to recommend which products are suitable for developing your
@@ -82,18 +86,18 @@
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-duration="1000" class="row reason-rhm--content__right">
-                <div class="col-lg-8 reason-rhm--content__right-column01">
+                <div class="col-8 reason-rhm--content__right-column01">
                     <div class="reason-rhm--content__right-column01-word">
                         <p class="reason-rhm--content__right-column01-word-heading">Trusted</p>
                         <p>We are the company that Strong International Connection, Enable Us to Procure and Provide a
                             Wide Range of Chemical Supply</p>
                     </div>
                 </div>
-                <div class="col-lg-4 reason-rhm--content__right-column02"><img src="assets/img/whyus02.png"></div>
+                <div class="col-4 reason-rhm--content__right-column02"><img src="assets/img/whyus02.png"></div>
             </div>
             <div data-aos="fade-right" data-aos-duration="1000" class="row reason-rhm--content__left">
-                <div class="col-lg-4 reason-rhm--content__left-column01"><img src="assets/img/whyus03.png"></div>
-                <div class="col-lg-8 reason-rhm--content__left-column02">
+                <div class="col-4 reason-rhm--content__left-column01"><img src="assets/img/whyus03.png"></div>
+                <div class="col-8 reason-rhm--content__left-column02">
                     <div class="reason-rhm--content__left-column02-word">
                         <p class="reason-rhm--content__left-column02-word-heading">Responsive Customer Service</p>
                         <p>We are always communicative, friendly and always willing to help you improve your business
@@ -102,17 +106,17 @@
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-duration="1000" class="row reason-rhm--content__right">
-                <div class="col-lg-8 reason-rhm--content__right-column01">
+                <div class="col-8 reason-rhm--content__right-column01">
                     <div class="reason-rhm--content__right-column01-word">
                         <p class="reason-rhm--content__right-column01-word-heading">Spacious Warehouse Facility</p>
                         <p>We have a warehouse that can contains a lot of goods and with supporting facilities</p>
                     </div>
                 </div>
-                <div class="col-lg-4 reason-rhm--content__right-column02"><img src="assets/img/whyus04.png"></div>
+                <div class="col-4 reason-rhm--content__right-column02"><img src="assets/img/whyus04.png"></div>
             </div>
             <div data-aos="fade-right" data-aos-duration="1000" class="row reason-rhm--content__left">
-                <div class="col-lg-4 reason-rhm--content__left-column01"><img src="assets/img/whyus05.png"></div>
-                <div class="col-lg-8 reason-rhm--content__left-column02">
+                <div class="col-4 reason-rhm--content__left-column01"><img src="assets/img/whyus05.png"></div>
+                <div class="col-8 reason-rhm--content__left-column02">
                     <div class="reason-rhm--content__left-column02-word">
                         <p class="reason-rhm--content__left-column02-word-heading">On Time</p>
                         <p>Time is always our benchmark to provide service satisfaction. We are always on time</p>
@@ -251,7 +255,7 @@
         <p class="news-rhm--heading-detail">Get in touch with us and increase your business</p>
         <div class="container news-rhm--content">
             <div class="row">
-                <div data-aos="fade-right" data-aos-duration="1000" class="col">
+                <div data-aos="fade-right" data-aos-duration="1000" id="big-news" class="col">
                     <div class="container-scroll">
                         <img src="assets/img/news01@2x.png" alt="Notebook" style="width:100%;">
                         <div class="content">
@@ -262,6 +266,14 @@
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="2000" class="col">
+                     <div class="row news-rhm--content__list" id="small-news">
+                           <div class="col-md-4 news-rhm--content__list-img-small">
+                           </div>
+                           <div class="col-md-8 news-rhm--content__list-content">
+                               <h5>Work From Home (WFH)</h5>
+                               <p>if you need anything urgent please email to haniem@cbn.net.id</p>
+                           </div>
+                     </div>
                     <div class="row news-rhm--content__list">
                         <div class="col-md-4 news-rhm--content__list-img01">
                         </div>
