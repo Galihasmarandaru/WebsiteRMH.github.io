@@ -1,106 +1,123 @@
 // Variable Color
 $color-primary: #272264;
 $color-secondary: #4e47b4;
-$purple-secondary: #1D1652;
+$purple-secondary: #1d1652;
 
 // Mixins
 @mixin respond($breakpoint) {
-   @if $breakpoint == phone {
-       @media only screen and (max-width: 25em) { @content };    //400px
-   }
-   @if $breakpoint == tab-port {
-       @media only screen and (max-width: 56.25em) { @content };     //900px
-   }
-   @if $breakpoint == tab-land {
-       @media only screen and (max-width: 75em) { @content };    //1200px
-   }
-   @if $breakpoint == big-desktop {
-       @media only screen and (min-width: 112.5em) { @content };    //1800
-   }
-   @if $breakpoint == nav-bar {
-      @media only screen and (max-width: 900px) { @content };    //1800
-  }
+	@if $breakpoint == phone {
+		@media (max-width: 360px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tab-port {
+		@media (min-width: 361px) and (max-width: 576px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tab-land {
+		@media (min-width: 577px) and (max-width: 768px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop {
+		@media (min-width: 769px) and (max-width: 992px) {
+			@content;
+		}
+	}
+	@if $breakpoint == big-desktop {
+		@media (min-width: 993px) and (max-width: 1200px) {
+			@content;
+		}
+	}
+	@if $breakpoint == nav-bar {
+		@media only screen and (max-width: 900px) {
+			@content;
+		}
+	}
 }
 
 body {
-   background-color: #f8f8f8;
+	background-color: #f8f8f8;
 }
 
 a#icon {
-   font-size: 30px;
-   display: none;
-   padding: 1rem;
-   @include respond(nav-bar) {
-      display: block;
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-   }
+	font-size: 30px;
+	display: none;
+	padding: 1rem;
+	@include respond(nav-bar) {
+		display: block;
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+	}
 }
 
 #navigation {
-   background-color: #fff;
-   width: 100%;
-   padding: 2rem 1.5rem 1.5rem 1.5rem;
+	background-color: #fff;
+	width: 100%;
+	padding: 2rem 1.5rem 1.5rem 1.5rem;
 	z-index: 9999;
-   position: fixed;
-   transition: height 0.5s;
+	position: fixed;
+	transition: height 0.5s;
 
 	a {
 		color: $color-primary;
-      text-decoration: none;
+		text-decoration: none;
 		&:hover {
 			transition: all 0.3s;
 		}
 	}
 	&__list {
-      //background-color: orange;
-      display: block;
-      transition: all 0.5s;
+		//background-color: orange;
+		display: block;
+		transition: all 0.5s;
 		#img-logo {
-         padding: 0.4rem;
-         width: 12rem;
-         transition: all 0.5s;
-         display: inline-block;
-      }
-      
+			padding: 0.4rem;
+			width: 12rem;
+			transition: all 0.5s;
+			display: inline-block;
+		}
+
 		&--menu-right {
-         //background-color: red;
-         height: 100%;
-         margin: auto;
-         display: block;
-         float: right;
-         padding: 0;
-         @include respond(nav-bar) {
-            width: 100%;
-         }
+			height: 100%;
+			margin: auto;
+			display: block;
+			float: right;
+			padding: 0;
+			@include respond(nav-bar) {
+				width: 100%;
+			}
 
-         &.navbar.responsive {
-            @include respond(nav-bar) {
-               display: block;
+			&.navbar.responsive {
+				@include respond(nav-bar) {
+					display: block;
 
-               padding-top: 1rem;
-               a {
-                  display: block;
-                  padding: 1rem 0rem 1rem 1rem;
-               }
-            }
-         }
+					padding-top: 1rem;
+					a {
+						display: block;
+						padding: 1rem 0rem 1rem 1rem;
+					}
+				}
+			}
 
 			a {
-            display: inline-block;
-            margin: 0;
-            padding: 1rem 0.5rem 1rem 0.5rem;
+				display: inline-block;
+				margin: 0;
+				padding: 1rem 0.5rem 1rem 0.5rem;
 
-            @include respond(nav-bar) {
-               display: none;
-            }
+				@include respond(nav-bar) {
+					display: none;
+				}
 
 				&:hover {
 					color: $color-primary !important;
-            }
-         }
+				}
+			}
 
+			i {
+				font-size: 2rem;
+			}
 		}
 	}
 }
@@ -125,22 +142,22 @@ a#icon {
 }
 
 .home-rhm {
-   background-color: #fff;
-   height: auto;
+	background-color: #fff;
+	height: auto;
 
 	&--container-content {
-      padding-top: 13rem;
+		padding-top: 13rem;
 
-      @include respond(phone) {
-         padding: 9rem 2rem 0 2rem;
-      }
+		@include respond(phone) {
+			padding: 9rem 2rem 0 2rem;
+		}
 	}
 	&--col-left {
-      width: calc(100% * 5 / 12);
-      animation: moveInLeft 1s ease-out;
-      @include respond(phone) {
-         width: auto;
-      }
+		width: calc(100% * 5 / 12);
+		animation: moveInLeft 1s ease-out;
+		@include respond(phone) {
+			width: auto;
+		}
 
 		&-headingbold {
 			font-weight: bold;
@@ -148,25 +165,25 @@ a#icon {
 		&-word {
 			padding-top: 3rem;
 			color: $color-primary;
-         width: 100%;
+			width: 100%;
 		}
 	}
 	&--col-right {
-      animation: moveInRight 1s ease-out;
-      width: calc(100% * 7 / 12);
+		animation: moveInRight 1s ease-out;
+		width: calc(100% * 7 / 12);
 
-      @include respond(phone) {
-         width: auto;
-      }
+		@include respond(phone) {
+			width: auto;
+		}
 
 		&-img {
 			margin-left: 2rem;
-         width: 100%;
+			width: 100%;
 
-         @include respond(phone) {
-            margin-top: 2rem;
-            margin-left: 0;
-         }
+			@include respond(phone) {
+				margin-top: 2rem;
+				margin-left: 0;
+			}
 		}
 	}
 	&--container-sosmed {
@@ -182,34 +199,34 @@ a#icon {
 }
 
 .about-rhm {
-   background-color: #fff;
-   padding-top: 7rem;
+	background-color: #fff;
+	padding-top: 7rem;
 	&--bg {
 		height: 500px;
 		background-image: url("img/bg-about@2x.jpg");
 		background-size: cover;
 		background-position: center;
-      background-repeat: no-repeat;
-      
-      @include respond(phone) {
-         background-image: none;
-         background-color: $purple-secondary;
-         height: auto;
-      }
+		background-repeat: no-repeat;
+
+		@include respond(phone) {
+			background-image: none;
+			background-color: $purple-secondary;
+			height: auto;
+		}
 
 		&-word {
 			padding: 3rem 0 1rem 0;
 			margin-left: 8rem;
 			color: white;
 			width: 30rem;
-         text-align: center;
+			text-align: center;
 
-         @include respond(phone) {
-            margin-left: 0;
-            width: 100%;
-            padding: 3rem 1.5rem 1rem 1.5rem;
-         }
-      }
+			@include respond(phone) {
+				margin-left: 0;
+				width: 100%;
+				padding: 3rem 1.5rem 1rem 1.5rem;
+			}
+		}
 	}
 }
 
@@ -217,6 +234,7 @@ a#icon {
 	color: $color-primary;
 	text-align: center;
 	padding-top: 10rem;
+	padding-bottom: 10rem;
 
 	// height: 2682px;
 	// background-image: url("bg-whyus@2x.jpg");
@@ -229,86 +247,86 @@ a#icon {
 
 	&--content {
 		&__left {
-         margin-top: 3.5rem;
+			margin-top: 3.5rem;
 
 			&-column01 {
-            border-right: 1px solid red;
-            padding-right: 0;
+				border-right: 1px solid red;
+				padding-right: 0;
 				img {
 					float: right;
 					width: 10rem;
-               padding-right: 2rem;
+					padding-right: 2rem;
 
-               @include respond(phone) {
-                  width: 6rem;
-                  padding-right: 0.5rem;
-               }
+					@include respond(phone) {
+						width: 6rem;
+						padding-right: 0.5rem;
+					}
 				}
 			}
 			&-column02 {
 				padding-top: 0.5rem;
 				padding-left: 2rem;
 				text-align: left;
-            
-            @include respond(phone) {
-               padding-left: 0.5rem;
-            }
+
+				@include respond(phone) {
+					padding-left: 0.5rem;
+				}
 
 				&-word {
 					float: left;
-               width: 70%;
-                        
-               @include respond(phone) {
-                  width: 95%;
-                  font-size: 14px;
-               }
+					width: 70%;
+
+					@include respond(phone) {
+						width: 95%;
+						font-size: 14px;
+					}
 
 					&-heading {
-                  font-weight: bold;
-                  font-size: 17px;
+						font-weight: bold;
+						font-size: 17px;
 					}
 				}
 			}
 		}
 		&__right {
-         margin-top: 3.5rem;
-         
+			margin-top: 3.5rem;
+
 			&-column01 {
 				padding-top: 0.5rem;
 				padding-right: 2rem;
 				text-align: right;
 
-            @include respond(phone) {
-               padding-right: 0.5rem;
-            }
+				@include respond(phone) {
+					padding-right: 0.5rem;
+				}
 
 				&-word {
 					float: right;
-               width: 70%;
-               
-               @include respond(phone) {
-                  width: 95%;
-                  font-size: 14px;
-               }
+					width: 70%;
+
+					@include respond(phone) {
+						width: 95%;
+						font-size: 14px;
+					}
 
 					&-heading {
-                  font-weight: bold;
-                  font-size: 16px;
+						font-weight: bold;
+						font-size: 16px;
 					}
 				}
 			}
 			&-column02 {
 				border-left: 1px solid red;
-            padding-left: 0;
+				padding-left: 0;
 				img {
 					float: left;
 					width: 10rem;
-               padding-left: 2rem;
-               
-               @include respond(phone) {
-                  width: 6rem;
-                  padding-left: 0.5rem;
-               }
+					padding-left: 2rem;
+
+					@include respond(phone) {
+						width: 6rem;
+						padding-left: 0.5rem;
+					}
 				}
 			}
 		}
@@ -316,18 +334,18 @@ a#icon {
 }
 
 .galery-rhm {
-   color: $color-primary;
+	color: $color-primary;
 	text-align: center;
 	padding-top: 7rem;
 	&--slideshow {
 		margin-top: -5rem;
-      padding: 40px 0 140px 0;
-      margin: auto;
-      width: 60%;
+		padding: 40px 0 140px 0;
+		margin: auto;
+		width: 60%;
 
-      @include respond(phone) {
-         width: 100%;
-      }
+		@include respond(phone) {
+			width: 100%;
+		}
 
 		p {
 			margin-top: 5rem;
@@ -348,46 +366,48 @@ a#icon {
 }
 
 .col {
-   @include respond(phone) {
-      padding: 0.5rem 2rem 0.5rem 2rem;
-   }
+	@include respond(phone) {
+		padding: 0.5rem 2rem 0.5rem 2rem;
+	}
 }
 
+// Product
+// ------------------------------------------------------------------------------------------------------------------------------------------
 .business-field-rhm {
 	padding-top: 10rem;
 	text-align: center;
 	&--heading {
-      padding-bottom: 1rem;
-      @include respond(phone) {
-         padding-bottom: 0;
-      }
+		padding-bottom: 1rem;
+		@include respond(phone) {
+			padding-bottom: 0;
+		}
 		h1 {
 			color: $color-primary;
 		}
 		p {
-			font-size: .8rem;
+			font-size: 0.8rem;
 			color: grey;
 		}
 	}
 	&--content {
 		&-row {
-         margin-top: 5rem;
+			margin-top: 5rem;
 
-         @include respond(phone) {
-            margin-top: 2rem;
-         }
+			@include respond(phone) {
+				margin-top: 2rem;
+			}
 			&-heading {
 				padding-top: 1rem;
 				font-size: 1rem;
 			}
 			&-paragraph {
-				font-size: .7rem;
+				font-size: 0.7rem;
 			}
 			a {
 				text-decoration: none;
 			}
 			&__box01 {
-            color: white;
+				color: white;
 				background-image: url("img/img01@2x.png");
 				background-size: cover;
 				background-position: center;
@@ -615,36 +635,75 @@ a#icon {
 	}
 }
 
+.product {
+	&-detail {
+		padding: 10rem 0 5rem 0;
+		&-content {
+			padding: 1.5rem;
+			background-color: white;
+			height: auto;
+			&-img {
+				img {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					width: 70%;
+
+					padding-top: 5rem;
+				}
+			}
+
+			&-list {
+				&--data {
+					padding-top: 5rem;
+				}
+			}
+
+			&-isi {
+				padding: 4rem 5rem 2rem 5rem;
+			}
+		}
+	}
+}
+
+// ------------------------------------------------------------------------------------------------------------------------------------------
+
+// News
+// ------------------------------------------------------------------------------------------------------------------------------------------
 #big-news {
-   @include respond(phone) {
-      display: none;
-   }
+	@include respond(phone) {
+		display: none;
+	}
 }
 
 #small-news {
-   @media screen and (min-width: 25.1em) {
-      display: none;
-   }
+	@media screen and (min-width: 25.1em) {
+		display: none;
+	}
 }
 
 .news-rhm {
-   padding-bottom: 10rem;
+	padding-bottom: 10rem;
 	&--heading {
 		color: $color-primary;
 		font-size: 2rem;
-      padding-top: 9rem;
+		padding-top: 9rem;
 
 		&-detail {
-			font-size: .8rem;
-         padding-bottom: 8rem;
-         
-         @include respond(phone) {
-            padding-bottom: 2rem;
-         }
+			font-size: 0.8rem;
+			padding-bottom: 8rem;
+
+			@include respond(phone) {
+				padding-bottom: 2rem;
+			}
 		}
 	}
 	text-align: center;
 	&--content {
+		a {
+			text-decoration: none;
+			color: black;
+		}
 		&__list {
 			margin-top: 1.2rem;
 			margin-left: 0.5rem;
@@ -680,8 +739,8 @@ a#icon {
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
-         }
-         &-img-small {
+			}
+			&-img-small {
 				width: 30%;
 				height: 100%;
 				// background-color: blue;
@@ -698,21 +757,29 @@ a#icon {
 				height: 100%;
 				h5 {
 					font-weight: bold;
-					font-size: .9rem;
+					font-size: 0.9rem;
 				}
 				p {
-					font-size: .7rem;
+					font-size: 0.7rem;
 				}
 			}
 		}
 	}
 }
 
+.find-more-news {
+	background-color: red;
+	height: 40rem;
+}
+
+// ------------------------------------------------------------------------------------------------------------------------------------------
+
 .footer-rhm {
 	&--top {
 		padding-top: 3rem;
+		padding-bottom: 3rem;
 		height: auto;
-      background-color: #fff;
+		background-color: #fff;
 		&-content {
 			&-left {
 				text-align: left;
@@ -724,11 +791,11 @@ a#icon {
 					color: $color-primary;
 					padding-top: 1rem;
 					padding-right: 2rem;
-               text-align: justify;
-               
-               @include respond(phone) {
-                  text-align: left;
-               }
+					text-align: justify;
+
+					@include respond(phone) {
+						text-align: left;
+					}
 				}
 			}
 			&-center {
@@ -789,14 +856,16 @@ a#icon {
 						text-align: left !important;
 					}
 				}
-         }
-         
-         @include respond(phone) {
-            &-left, &-center, &-right {
-               margin-bottom: 4rem;
-               border: none;
-            }
-          }
+			}
+
+			@include respond(phone) {
+				&-left,
+				&-center,
+				&-right {
+					margin-bottom: 4rem;
+					border: none;
+				}
+			}
 		}
 	}
 	&--bottom {
@@ -804,8 +873,8 @@ a#icon {
 		padding-top: 25px;
 		color: white;
 		height: 5rem;
-      background-color: $color-primary;
-      margin-bottom: 0;
+		background-color: $color-primary;
+		margin-bottom: 0;
 	}
 }
 
@@ -870,6 +939,25 @@ a#icon {
 	&--animated {
 		animation: moveInBottom 0.5s ease-out 0.75s;
 		animation-fill-mode: backwards;
+	}
+}
+
+.btn-news {
+	display: inline-block;
+	border: none;
+	background: $color-primary;
+	color: #fff;
+	padding: 0.5rem 1.5rem;
+
+	margin-top: 3.5rem;
+	&-block {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	&:hover {
+		opacity: 0.9;
 	}
 }
 
@@ -942,19 +1030,559 @@ a#icon {
 		font-size: 1.6rem;
 	}
 	p {
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 }
 
 .more {
-	padding-top: 3rem;	
+	padding-top: 3rem;
 	a {
 		color: $color-primary;
 		text-decoration: none;
 
-		transition: .2s ease-in;
+		transition: 0.2s ease-in;
 		&:hover {
 			color: $color-secondary;
 		}
+	}
+}
+
+/* Showcase */
+#showcase {
+	color: #fff;
+	padding: 2rem;
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.showcase-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: center;
+		align-items: center;
+		height: 70vh;
+		padding-top: 10rem;
+	}
+
+	.showcase-content {
+		z-index: 1;
+
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.category-home {
+	display: inline-block;
+	color: #fff;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	padding: 0.4rem 0.6rem;
+	border-radius: 15px;
+	margin-bottom: 0.5rem;
+
+	&-sports {
+		background-color: red;
+	}
+}
+
+.news-card {
+	text-align: center;
+	padding: 4rem 0 9rem 0;
+	h2 {
+		color: $color-primary;
+	}
+	&--items {
+		padding-top: 4rem;
+		.card {
+		}
+	}
+}
+
+.berita {
+	&-detail {
+		padding: 10rem 0 5rem 0;
+		h2 {
+			padding-top: 2rem;
+			padding-bottom: 3rem;
+			text-align: center;
+			color: $color-primary;
+		}
+		&-content {
+			padding: 1.5rem;
+			background-color: white;
+			height: auto;
+
+			&--img {
+				height: 25rem;
+				background-color: red;
+
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			&--isi {
+				h4 {
+					padding-top: 2rem;
+				}
+				&-date {
+					font-size: 14px;
+					color: lightgrey;
+				}
+				p {
+					padding-top: 0.5rem;
+				}
+			}
+		}
+
+		&-card {
+			height: 40rem;
+			padding: 1rem;
+
+			&--top {
+				height: auto;
+				background-color: $color-secondary;
+				padding: 1.4rem;
+				color: white;
+			}
+
+			&--bottom {
+				margin-top: 1.2rem;
+				height: auto;
+				background-color: #fff;
+				padding: 2rem 0 2rem 0;
+			}
+		}
+	}
+}
+
+.list li {
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-bottom: #555 dotted 1px;
+	width: 90%;
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+}
+.list li a:hover {
+	color: red !important;
+}
+
+ul {
+	list-style: none;
+}
+
+// ------------------
+@keyframes jssorl-009-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/*jssor slider bullet skin 051 css*/
+.jssorb051 .i {
+	position: absolute;
+	cursor: pointer;
+}
+.jssorb051 .i .b {
+	fill: #fff;
+	fill-opacity: 0.5;
+}
+.jssorb051 .i:hover .b {
+	fill-opacity: 0.7;
+}
+.jssorb051 .iav .b {
+	fill-opacity: 1;
+}
+.jssorb051 .i.idn {
+	opacity: 0.3;
+}
+
+/*jssor slider arrow skin 051 css*/
+.jssora051 {
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+.jssora051 .a {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 360;
+	stroke-miterlimit: 10;
+}
+.jssora051:hover {
+	opacity: 0.8;
+}
+.jssora051.jssora051dn {
+	opacity: 0.5;
+}
+.jssora051.jssora051ds {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
+.product-moving {
+	position: relative;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	width: 980px;
+	height: 380px;
+	overflow: hidden;
+	visibility: hidden;
+
+	@include respond(phone) {
+		overflow: hidden;
+		visibility: hidden;
+		width: 350px;
+	}
+	&__content {
+		cursor: default;
+		position: relative;
+		top: 0px;
+		left: 50px;
+		width: 880px;
+		height: 380px;
+		overflow: hidden;
+	}
+}
+
+.product-clothing-1 {
+	/*    background-color: black;*/
+	position: absolute;
+	bottom: 0;
+	left: 8%;
+
+	/*width: 0%;*/
+	width: 25rem;
+	height: 30rem;
+	/*    background-image: linear-gradient(
+				to right bottom,
+				rgba($color-grey,1),
+				rgba($color-black,1));
+			border-radius: .5rem;*/
+	transition: all 0.2s;
+
+	&:hover {
+		transform: translateY(-1rem);
+		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	&__img-1 {
+		position: absolute;
+		bottom: 10%;
+		left: 10%;
+
+		/*width: 0rem;*/
+		width: 80%;
+		height: auto;
+	}
+}
+.product-clothing-2 {
+	/*    background-color: black;*/
+	position: absolute;
+	bottom: 0;
+	left: 8%;
+
+	/*width: 0%;*/
+	width: 25rem;
+	height: 30rem;
+	/*    background-image: linear-gradient(
+				to right bottom,
+				rgba($color-grey,1),
+				rgba($color-black,1));
+			border-radius: .5rem;*/
+	transition: all 0.2s;
+
+	&:hover {
+		transform: translateY(-1rem);
+		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	&__img-2 {
+		position: absolute;
+		bottom: 10%;
+		left: 8%;
+
+		/*width: 0rem;*/
+		width: 80%;
+		height: auto;
+	}
+}
+.product-clothing-3 {
+	/*    background-color: black;*/
+	position: absolute;
+	bottom: 0;
+	left: 8%;
+
+	/*width: 0%;*/
+	width: 25rem;
+	height: 30rem;
+	/*    background-image: linear-gradient(
+				to right bottom,
+				rgba($color-grey,1),
+				rgba($color-black,1));
+			border-radius: .5rem;*/
+	transition: all 0.2s;
+
+	&:hover {
+		transform: translateY(-1rem);
+		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	&__img-3 {
+		position: absolute;
+		bottom: 10%;
+		left: 10%;
+
+		/*width: 0rem;*/
+		width: 80%;
+		height: auto;
+	}
+}
+
+.product-clothing-4 {
+	/*    background-color: black;*/
+	position: absolute;
+	bottom: 0;
+	left: 8%;
+
+	/*width: 0%;*/
+	width: 25rem;
+	height: 30rem;
+	/*    background-image: linear-gradient(
+				to right bottom,
+				rgba($color-grey,1),
+				rgba($color-black,1));
+			border-radius: .5rem;*/
+	transition: all 0.2s;
+
+	&:hover {
+		transform: translateY(-1rem);
+		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	&__img-4 {
+		position: absolute;
+		bottom: 10%;
+		left: 12%;
+
+		/*width: 0rem;*/
+		width: 80%;
+		height: auto;
+	}
+}
+
+.product-clothing-5 {
+	/*    background-color: black;*/
+	position: absolute;
+	bottom: 0;
+	left: 8%;
+
+	/*width: 0%;*/
+	width: 25rem;
+	height: 30rem;
+	/*    background-image: linear-gradient(
+				to right bottom,
+				rgba($color-grey,1),
+				rgba($color-black,1));
+			border-radius: .5rem;*/
+	transition: all 0.2s;
+
+	&:hover {
+		transform: translateY(-1rem);
+		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	&__img-5 {
+		position: absolute;
+		bottom: 10%;
+		left: 12%;
+
+		/*width: 0rem;*/
+		width: 80%;
+		height: auto;
+	}
+}
+
+/*jssor slider loading skin spin css*/
+.jssorl-009-spin img {
+	animation-name: jssorl-009-spin;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/*jssor slider bullet skin 052 css*/
+.jssorb052 {
+	margin-top: 0.6rem;
+}
+
+.jssorb052 .i {
+	position: absolute;
+	cursor: pointer;
+}
+
+.jssorb052 .i .b {
+	fill: $color-primary;
+	fill-opacity: 0.3;
+}
+
+.jssorb052 .i:hover .b {
+	fill-opacity: 0.7;
+}
+
+.jssorb052 .iav .b {
+	fill-opacity: 1;
+}
+
+.jssorb052 .i.idn {
+	opacity: 0.3;
+}
+
+/*jssor slider arrow skin 053 css*/
+.jssora053 {
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.jssora053 .a {
+	fill: none;
+	stroke: $color-primary;
+	stroke-width: 740;
+	stroke-miterlimit: 10;
+}
+
+.jssora053:hover {
+	opacity: 0.8;
+}
+
+.jssora053.jssora053dn {
+	opacity: 0.5;
+}
+
+.jssora053.jssora053ds {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
+.heading-support {
+    color: $color-secondary;
+
+
+    &--main {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        display: inline-block;
+        font-size: 2.5rem;
+        font-weight: 500;
+
+        animation: moveInRight 1s ease-out;
+    }
+}
+
+.del-contact {
+	padding: 18rem 0 0 0;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("img/bg-galery.jpg");
+	&__content {
+		&--form {
+			background-image: linear-gradient(rgba($color-primary, 0.95), rgba($color-secondary, 0.95));
+
+			position: relative;
+			margin-top: 15rem;
+			height: 33vh;
+			&-inside {
+				border-radius: 0.4rem;
+				position: absolute;
+				top: -160%;
+				left: 8.5%;
+				padding: 1rem 1rem 2rem 1rem;
+
+				background-image: linear-gradient(to right bottom, rgba(white, 0.9), rgba(white, 0.95));
+				width: 80%;
+				height: auto;
+				box-shadow: 0 0.1rem 0.4rem 0 black;
+				&-row {
+					padding: 1rem;
+					display: inline-block;
+				}
+				h1 {
+					padding: 2rem 0 0 0;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.slide {
+	cursor:default;
+	position:relative;
+	top:50px;
+	left:130px;
+	width:620px;
+	height:160px;
+	overflow:hidden;
+
+	&-content {
+		margin-left: 2rem;
 	}
 }

@@ -18,10 +18,12 @@
     <section id="home" class="home-rhm">
         <div id="navigation">
             <div id="navigation__list">
-                <img id="img-logo" src="assets/img/logo.jpg">
+                <a href="#home">
+                    <img id="img-logo" src="assets/img/logo.jpg">
+                </a>
                 <a href="javascript:void(0);" id="icon" onclick="toggleNavBar()">
-                     <i class="fa fa-bars"> </i>
-               </a>
+                    <i class="fa fa-bars"> </i>
+                </a>
                 <div id="navigation__list--menu-right" class="navbar">
                     <a class="active" href="#home" onclick="closeNavBar()">Home</a>
                     <a href="#about" onclick="closeNavBar()">Who Are We</a>
@@ -46,8 +48,8 @@
                         <div></div>
                     </div>
                 </div>
-                <div class="home-rhm--col-right"><img class="home-rhm--col-right-img"
-                        src="assets/img/img-cover@2x.png"></div>
+                <div class="home-rhm--col-right"><img class="home-rhm--col-right-img" src="assets/img/img-cover@2x.png">
+                </div>
             </div>
         </div>
         <div class="container home-rhm--container-sosmed">
@@ -125,35 +127,61 @@
             </div>
         </div>
     </section>
-    <section class="galery-rhm">
-        <h1 id="weare">Here we are</h1>
-        <div class="galery-rhm--slideshow">
-            <div data-aos="fade-up" data-aos-duration="1000" class="carousel slide" data-ride="carousel"
-                id="carousel-1">
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/pct01.jpg"
-                            alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block"
-                            src="assets/img/pct02.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block"
-                            src="assets/img/pct03.jpg" alt="Slide Image"></div>
+
+    <section class="del-contact">
+        <div class="del-contact__content">
+            <div class="del-contact__content--form">
+                <div data-aos="fade-up" class="del-contact__content--form-inside">
+                    <h1 class="heading-support">
+                        <span class="heading-support--main">Here we Are</span>
+                    </h1>
+                    <div class="del-contact__content--form-inside-row">
+                        <div id="jssor_1" style="position:relative;margin:0 auto;top:-60px;left:60px;width:900px;height:300px;overflow:hidden;visibility:hidden;">
+                            <!-- Loading Screen -->
+                            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                            </div>
+                            <div data-u="slides" class="slide">
+                                <div>
+                                    <img class="slide-content" data-u="image" src="assets/img/pct01.jpg" />
+                                </div>
+                                <div >
+                                    <img class="slide-content" data-u="image" src="assets/img/pct02.jpg" />
+                                </div>
+                                <div>
+                                    <img class="slide-content" data-u="image" src="assets/img/pct03.jpg" />
+                                </div>
+                                <div>
+                                    <img class="slide-content" data-u="image" src="assets/img/pct01.jpg" />
+                                </div>
+                            </div>
+                            <!-- Bullet Navigator -->
+                            <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:22px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- Arrow Navigator -->
+                            <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                                </svg>
+                            </div>
+                            <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span
-                            class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
-                        class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span
-                            class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-1" data-slide-to="1"></li>
-                    <li data-target="#carousel-1" data-slide-to="2"></li>
-                </ol>
-            </div>
-            <div>
-                <p>Our Team</p>
             </div>
         </div>
-        <div class="galery-rhm--bg"></div>
     </section>
+
     <section id="business" class="business-field-rhm">
         <div class="business-field-rhm--heading">
             <h1>BUSINESS FIELD</h1>
@@ -162,11 +190,12 @@
         <div data-aos="fade-up" data-aos-duration="1000" class="container business-field-rhm--content">
             <div class="row business-field-rhm--content-row">
                 <div class="col">
-                    <a href="">
+                    <a href="product.html">
                         <div class="business-field-rhm--content-row__box01">
                             <p class="business-field-rhm--content-row-heading"><strong>COATING &amp; INK</strong>
                             </p>
-                            <p class="business-field-rhm--content-row-paragraph">SILQUEST A-187, SILQUEST A-1100, SILBLOCK WA, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">SILQUEST A-187, SILQUEST A-1100,
+                                SILBLOCK WA, etc.</p>
                         </div>
                     </a>
                 </div>
@@ -175,7 +204,8 @@
                         <div class="business-field-rhm--content-row__box02">
                             <p class="business-field-rhm--content-row-heading"><strong>RUBBER INDUSTRIES</strong>
                             </p>
-                            <p class="business-field-rhm--content-row-paragraph">SILQUEST NXT, Reclaim Rubber, Synthetic rubbers, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">SILQUEST NXT, Reclaim Rubber, Synthetic
+                                rubbers, etc.</p>
                         </div>
                     </a>
                 </div>
@@ -183,7 +213,8 @@
                     <a href="">
                         <div class="business-field-rhm--content-row__box03">
                             <p class="business-field-rhm--content-row-heading"><strong>DIE CASTING</strong></p>
-                            <p class="business-field-rhm--content-row-paragraph">Release Agents, Plunger Lubricants, Machine Dispenser, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">Release Agents, Plunger Lubricants,
+                                Machine Dispenser, etc.</p>
                         </div>
                     </a>
                 </div>
@@ -194,7 +225,8 @@
                         <div class="business-field-rhm--content-row__box04">
                             <p class="business-field-rhm--content-row-heading"><strong>PLASTIC &amp; CABLE</strong>
                             </p>
-                            <p class="business-field-rhm--content-row-paragraph">Crosslinker, Anti blocking, Dispersing Agents, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">Crosslinker, Anti blocking, Dispersing
+                                Agents, etc.</p>
                         </div>
                     </a>
                 </div>
@@ -204,7 +236,8 @@
                             <p class="business-field-rhm--content-row-heading"><strong>FOOD &amp;
                                     BEVERAGES</strong>
                             </p>
-                            <p class="business-field-rhm--content-row-paragraph">Oleochemical, Sweetener, Body Building, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">Oleochemical, Sweetener, Body Building,
+                                etc.</p>
                         </div>
                     </a>
                 </div>
@@ -214,7 +247,8 @@
                             <p class="business-field-rhm--content-row-heading"><strong>EMULSION
                                     POLYMERIZATION</strong>
                             </p>
-                            <p class="business-field-rhm--content-row-paragraph">SILQUEST A-171, Crosslinker, Antifoam, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">SILQUEST A-171, Crosslinker, Antifoam,
+                                etc.</p>
                         </div>
                     </a>
                 </div>
@@ -224,7 +258,8 @@
                     <a href="">
                         <div class="business-field-rhm--content-row__box07">
                             <p class="business-field-rhm--content-row-heading"><strong>MACHINERY</strong></p>
-                            <p class="business-field-rhm--content-row-paragraph">buhler die casting injection machinery, buhler grinding, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">buhler die casting injection machinery,
+                                buhler grinding, etc.</p>
                         </div>
                     </a>
                 </div>
@@ -233,7 +268,8 @@
                         <div class="business-field-rhm--content-row__box08">
                             <p class="business-field-rhm--content-row-heading"><strong>HOUSEHOLD,
                                 </strong><br><strong>PERSONAL CARE</strong><br><strong>&amp; COSMETICS</strong></p>
-                            <p class="business-field-rhm--content-row-paragraph">Oleochemical, Silicones, Anti Aging, etc.</p>
+                            <p class="business-field-rhm--content-row-paragraph">Oleochemical, Silicones, Anti Aging,
+                                etc.</p>
                         </div>
                     </a>
                 </div>
@@ -256,52 +292,49 @@
         <div class="container news-rhm--content">
             <div class="row">
                 <div data-aos="fade-right" data-aos-duration="1000" id="big-news" class="col">
-                    <div class="container-scroll">
-                        <img src="assets/img/news01@2x.png" alt="Notebook" style="width:100%;">
-                        <div class="content">
-                            <h1>Work From Home (WFH)
-                            </h1>
+                    <a href="news.html">
+                        <div class="container-scroll">
+                            <img src="assets/img/news01@2x.png" alt="Notebook" style="width:100%;">
+                            <div class="content">
+                                <h1>Work From Home (WFH)
+                                </h1>
+                                <p>if you need anything urgent please email to haniem@cbn.net.id</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="2000" class="col">
+                    <div class="row news-rhm--content__list" id="small-news">
+                        <div class="col-md-4 news-rhm--content__list-img-small">
+                        </div>
+                        <div class="col-md-8 news-rhm--content__list-content">
+                            <h5>Work From Home (WFH)</h5>
                             <p>if you need anything urgent please email to haniem@cbn.net.id</p>
                         </div>
                     </div>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="2000" class="col">
-                     <div class="row news-rhm--content__list" id="small-news">
-                           <div class="col-md-4 news-rhm--content__list-img-small">
-                           </div>
-                           <div class="col-md-8 news-rhm--content__list-content">
-                               <h5>Work From Home (WFH)</h5>
-                               <p>if you need anything urgent please email to haniem@cbn.net.id</p>
-                           </div>
-                     </div>
-                    <div class="row news-rhm--content__list">
-                        <div class="col-md-4 news-rhm--content__list-img01">
+                    <a href="news.html">
+                        <div class="row news-rhm--content__list">
+                            <div class="col-md-4 news-rhm--content__list-img01">
+                            </div>
+                            <div class="col-md-8 news-rhm--content__list-content">
+                                <h5>Idul Fitri Holiday</h5>
+                                <p>we are close down for lebaran holiday start 13 Mei 2020 until 5 June 2020</p>
+                            </div>
                         </div>
-                        <div class="col-md-8 news-rhm--content__list-content">
-                            <h5>Idul Fitri Holiday</h5>
-                            <p>we are close down for lebaran holiday start 13 Mei 2020 until 5 June 2020</p>
+                    </a>
+                    <a href="news.html">
+                        <div class="row news-rhm--content__list">
+                            <div class="col-md-4 news-rhm--content__list-img02">
+                            </div>
+                            <div class="col-md-8 news-rhm--content__list-content">
+                                <h5>Keep Safe, Strong and Healty !</h5>
+                                <p>Trust us to provide the best service to improve the quality of your business.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row news-rhm--content__list">
-                        <div class="col-md-4 news-rhm--content__list-img02">
-                        </div>
-                        <div class="col-md-8 news-rhm--content__list-content">
-                            <h5>Keep Safe, Strong and Healty !</h5>
-                            <p>Trust us to provide the best service to improve the quality of your business.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- <div class="row news-rhm--content__list">
-                        <div class="col-md-4 news-rhm--content__list-img03">
-                        </div>
-                        <div class="col-md-8 news-rhm--content__list-content">
-                            <h5>Cutting-edge products launched through Logitech-Excel</h5>
-                            <p>The Managing Director & Cluster Head India & South-West Asia at Logitech Sumanta Datta.
-                            </p>
-                        </div>
-                    </div> -->
+                    </a>
                     <div class="more">
-                        <a href="">
+                        <a href="find-more.html">
                             Find Out More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -323,7 +356,8 @@
                     <div class="col footer-rhm--top-content-center">
                         <h5>HOW TO FIND US</h5>
                         <p>If you looking for further information, you can email us in here</p>
-                        <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" style="text-decoration: none">
+                        <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                            style="text-decoration: none">
                             <div class="footer-rhm--top-content-center__email">
                                 <i class="fas fa-envelope"></i> cs@renahaniem.co.id
                             </div>
@@ -331,9 +365,9 @@
                         <p class="footer-rhm--top-content-center__centercall">or calling us
                             in here</p>
                         <!-- <a href="" style="text-decoration: none"> -->
-                            <div class="footer-rhm--top-content-center__call">
-                                <i class="fas fa-phone"></i> (62) 21 539 8318
-                            </div>
+                        <div class="footer-rhm--top-content-center__call">
+                            <i class="fas fa-phone"></i> (62) 21 539 8318
+                        </div>
                         <!-- </a> -->
                     </div>
                     <div class="col footer-rhm--top-content-right">
@@ -394,6 +428,9 @@
     </script>
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
+    <script type="text/javascript" src="assets/js/jssor.slider-27.5.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/slideshow.js"></script>
+    <script type="text/javascript">jssor_1_slider_init();</script>
 </body>
 
 </html>
