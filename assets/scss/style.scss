@@ -1066,12 +1066,17 @@ a#icon {
 	background-size: cover;
 
 	.showcase-container {
+		//background-color: yellow;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-content: center;
 		align-items: center;
-		height: 70vh;
+		height: 500px;
 		padding-top: 10rem;
+
+		@include respond(phone) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	.showcase-content {
