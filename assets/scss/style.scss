@@ -6,12 +6,17 @@ $purple-secondary: #1d1652;
 // Mixins
 @mixin respond($breakpoint) {
 	@if $breakpoint == phone {
-		@media (max-width: 360px) {
+		@media (max-width: 400px) {
+			@content;
+		}
+   }
+   @if $breakpoint == tab-below {
+		@media (max-width: 576px) {
 			@content;
 		}
 	}
 	@if $breakpoint == tab-port {
-		@media (min-width: 361px) and (max-width: 576px) {
+		@media (min-width: 401px) and (max-width: 576px) {
 			@content;
 		}
 	}
@@ -74,7 +79,7 @@ a#icon {
 		transition: all 0.5s;
 		#img-logo {
 			padding: 0.4rem;
-			width: 12rem;
+         width: 12rem;
 			transition: all 0.5s;
 			display: inline-block;
 		}
@@ -637,30 +642,42 @@ a#icon {
 
 .product {
 	&-detail {
+      //background-color: red;
 		padding: 10rem 0 5rem 0;
 		&-content {
 			padding: 1.5rem;
-			background-color: white;
-			height: auto;
+         background-color: white;
+         //background-color: orange;
+         height: auto;
+         padding-top: 6.5rem;
+
+         @include respond(phone) {
+            padding-top: 2rem;
+         }
 			&-img {
 				img {
 					display: block;
 					margin-left: auto;
 					margin-right: auto;
 					width: 70%;
-
-					padding-top: 5rem;
 				}
 			}
 
 			&-list {
-				&--data {
-					padding-top: 5rem;
-				}
+            //background-color: orangered;
+
+            @include respond(phone) {
+               margin-top: 4rem;
+            }
 			}
 
 			&-isi {
-				padding: 4rem 5rem 2rem 5rem;
+            //background-color: yellow;
+            padding: 4rem 5rem 2rem 5rem;
+            @include respond(phone) {
+               padding: 0;
+               margin-top: 1rem;
+            }
 			}
 		}
 	}
@@ -683,6 +700,7 @@ a#icon {
 }
 
 .news-rhm {
+   //background-color: red;
 	padding-bottom: 10rem;
 	&--heading {
 		color: $color-primary;
@@ -1056,18 +1074,27 @@ a#icon {
 	background-repeat: no-repeat;
 	background-size: cover;
 
+   @include respond(phone) {
+      padding: 1rem 0;
+   }
 	.showcase-container {
+      //background-color: yellow;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-content: center;
 		align-items: center;
 		height: 70vh;
-		padding-top: 10rem;
+      padding-top: 10rem;
+      
+      @include respond(phone) {
+         grid-template-columns: repeat(1, 1fr);
+      }
 	}
 
 	.showcase-content {
-		z-index: 1;
-
+      //background-color: red;
+      z-index: 1;
+      
 		p {
 			margin-bottom: 1rem;
 		}
@@ -1082,28 +1109,36 @@ a#icon {
 	padding: 0.4rem 0.6rem;
 	border-radius: 15px;
 	margin-bottom: 0.5rem;
-
-	&-sports {
-		background-color: red;
-	}
 }
 
 .news-card {
 	text-align: center;
-	padding: 4rem 0 9rem 0;
+   padding: 4rem 0 9rem 0;
+   
+   @include respond(phone) {
+      padding-bottom: 2rem;
+   }
 	h2 {
 		color: $color-primary;
 	}
 	&--items {
 		padding-top: 4rem;
 		.card {
+         @include respond(phone) {
+            margin-bottom: 2rem;
+         }
 		}
 	}
 }
 
 .berita {
 	&-detail {
-		padding: 10rem 0 5rem 0;
+      padding: 10rem 3rem 5rem 3rem;
+      
+      @include respond(phone) {
+         padding: 10rem 1.5rem 3rem 1.5rem;
+      }
+
 		h2 {
 			padding-top: 2rem;
 			padding-bottom: 3rem;
@@ -1111,17 +1146,26 @@ a#icon {
 			color: $color-primary;
 		}
 		&-content {
+         width: calc(100% * 8 / 12);
 			padding: 1.5rem;
-			background-color: white;
+         //background-color: white;
 			height: auto;
 
+         @include respond(phone) {
+            width: 100%;
+            padding: 0;
+         }
 			&--img {
 				height: 25rem;
-				background-color: red;
+				//background-color: red;
 
 				background-size: cover;
 				background-position: center;
-				background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            
+            @include respond(phone) {
+               height: 15rem;
+            }
 			}
 
 			&--isi {
@@ -1139,8 +1183,9 @@ a#icon {
 		}
 
 		&-card {
+         width: calc(100% * 4 / 12);
 			height: 40rem;
-			padding: 1rem;
+         padding: 1rem;
 
 			&--top {
 				height: auto;
@@ -1154,7 +1199,11 @@ a#icon {
 				height: auto;
 				background-color: #fff;
 				padding: 2rem 0 2rem 0;
-			}
+         }
+         
+         @include respond(phone) {
+            display: none;
+         }
 		}
 	}
 }
