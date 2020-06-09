@@ -34,7 +34,19 @@ jssor_1_slider_init = function () {
     ScaleSlider();
 
     $Jssor$.$AddEvent(window, "load", ScaleSlider);
-    $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+    // $Jssor$.$AddEvent(window, "resize", ScaleSlider);
     $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
     /*#endregion responsive code end*/
 };
+
+$(document).ready(function () {
+    if ($(window).width() <= 360) {
+        $("#dots").hide();
+        $("#left").click(function () {
+            $("#dots").hide();
+        });
+        $("#right").click(function () {
+            $("#dots").hide();
+        });
+    }
+});

@@ -214,6 +214,12 @@ a#icon {
 			height: auto;
 		}
 
+		@include respond(tab-land) {
+			background-image: none;
+			background-color: $purple-secondary;
+			height: auto;
+		}
+
 		&-word {
 			padding: 3rem 0 1rem 0;
 			margin-left: 8rem;
@@ -235,6 +241,7 @@ a#icon {
 	text-align: center;
 	padding-top: 10rem;
 	padding-bottom: 10rem;
+	overflow: hidden;
 
 	// height: 2682px;
 	// background-image: url("bg-whyus@2x.jpg");
@@ -250,7 +257,6 @@ a#icon {
 			margin-top: 3.5rem;
 
 			&-column01 {
-				border-right: 1px solid red;
 				padding-right: 0;
 				img {
 					float: right;
@@ -264,6 +270,7 @@ a#icon {
 				}
 			}
 			&-column02 {
+				border-left: 1px solid red;
 				padding-top: 0.5rem;
 				padding-left: 2rem;
 				text-align: left;
@@ -365,7 +372,7 @@ a#icon {
 	}
 }
 
-.col {
+.col-md-4 {
 	@include respond(phone) {
 		padding: 0.5rem 2rem 0.5rem 2rem;
 	}
@@ -683,6 +690,7 @@ a#icon {
 }
 
 .news-rhm {
+	overflow: hidden;
 	padding-bottom: 10rem;
 	&--heading {
 		color: $color-primary;
@@ -1035,6 +1043,7 @@ a#icon {
 }
 
 .more {
+	overflow: hidden;
 	padding-top: 3rem;
 	a {
 		color: $color-primary;
@@ -1521,18 +1530,17 @@ ul {
 }
 
 .heading-support {
-    color: $color-secondary;
+	color: $color-secondary;
 
+	&--main {
+		padding-top: 2rem;
+		padding-bottom: 3rem;
+		display: inline-block;
+		font-size: 2.5rem;
+		font-weight: 500;
 
-    &--main {
-        padding-top: 2rem;
-        padding-bottom: 4rem;
-        display: inline-block;
-        font-size: 2.5rem;
-        font-weight: 500;
-
-        animation: moveInRight 1s ease-out;
-    }
+		animation: moveInRight 1s ease-out;
+	}
 }
 
 .del-contact {
@@ -1542,27 +1550,83 @@ ul {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-image: url("img/bg-galery.jpg");
+
+	overflow: hidden;
 	&__content {
 		&--form {
 			background-image: linear-gradient(rgba($color-primary, 0.95), rgba($color-secondary, 0.95));
 
 			position: relative;
 			margin-top: 15rem;
-			height: 33vh;
+			height: 250px;
+
+			@include respond(phone) {
+				margin-top: 0;
+				height: 160px;
+			}
 			&-inside {
 				border-radius: 0.4rem;
 				position: absolute;
 				top: -160%;
-				left: 8.5%;
+				left: 9.5%;
 				padding: 1rem 1rem 2rem 1rem;
 
 				background-image: linear-gradient(to right bottom, rgba(white, 0.9), rgba(white, 0.95));
 				width: 80%;
 				height: auto;
 				box-shadow: 0 0.1rem 0.4rem 0 black;
+
+				@include respond(phone) {
+					left: 0%;
+					width: 100%;
+
+					padding: 0 0 0 0;
+				}
+
 				&-row {
 					padding: 1rem;
 					display: inline-block;
+
+					@include respond(phone) {
+						padding: 0;
+					}
+					&-jssor {
+						position: relative;
+						top: -60px;
+						left: 60px;
+						width: 915px;
+						height: 300px;
+
+						@include respond(phone) {
+							top: -30px;
+							left: 0;
+							width: 360px;
+							height: 170px;
+						}
+
+						&__slide {
+							position: relative;
+							top: 65px;
+							left: 140px;
+							width: 640px;
+							height: 160px;
+
+							@include respond(phone) {
+								top: 10px;
+								left: 90px;
+								width: 180px;
+								height: 160px;
+							}
+
+							&-content {
+								margin-left: 2rem;
+
+								@include respond(phone) {
+									margin-left: 0;
+								}
+							}
+						}
+					}
 				}
 				h1 {
 					padding: 2rem 0 0 0;
@@ -1570,19 +1634,5 @@ ul {
 				}
 			}
 		}
-	}
-}
-
-.slide {
-	cursor:default;
-	position:relative;
-	top:50px;
-	left:130px;
-	width:620px;
-	height:160px;
-	overflow:hidden;
-
-	&-content {
-		margin-left: 2rem;
 	}
 }
