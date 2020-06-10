@@ -6,11 +6,11 @@ $purple-secondary: #1d1652;
 // Mixins
 @mixin respond($breakpoint) {
 	@if $breakpoint == phone {
-		@media (max-width: 400px) {
+		@media (max-width: 480px) {
 			@content;
 		}
-   }
-   @if $breakpoint == tab-below {
+	}
+	@if $breakpoint == tab-below {
 		@media (max-width: 576px) {
 			@content;
 		}
@@ -79,7 +79,7 @@ a#icon {
 		transition: all 0.5s;
 		#img-logo {
 			padding: 0.4rem;
-         width: 12rem;
+			width: 12rem;
 			transition: all 0.5s;
 			display: inline-block;
 		}
@@ -150,6 +150,9 @@ a#icon {
 	background-color: #fff;
 	height: auto;
 
+	@include respond(phone) {
+		text-align: center;
+	}
 	&--container-content {
 		padding-top: 13rem;
 
@@ -171,6 +174,37 @@ a#icon {
 			padding-top: 3rem;
 			color: $color-primary;
 			width: 100%;
+
+			@include respond(tab-land) {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+
+			@include respond(desktop) {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+
+			h1 {
+				@include respond(phone) {
+					padding-left: 1rem;
+					padding-right: 1rem;
+					font-size: 1.5rem;
+				}
+				@include respond(tab-land) {
+					font-size: 1.5rem;
+				}
+				@include respond(desktop) {
+					font-size: 1.5rem;
+				}
+			}
+
+			p {
+				@include respond(phone) {
+					padding-left: 1rem;
+					padding-right: 1rem;
+				}
+			}
 		}
 	}
 	&--col-right {
@@ -186,6 +220,20 @@ a#icon {
 			width: 100%;
 
 			@include respond(phone) {
+				width: 90%;
+				margin-top: 2rem;
+				margin-left: 0;
+				display: none;
+			}
+
+			@include respond(tab-land) {
+				width: 80%;
+				margin-top: 2rem;
+				margin-left: 0;
+			}
+
+			@include respond(desktop) {
+				width: 90%;
 				margin-top: 2rem;
 				margin-left: 0;
 			}
@@ -193,6 +241,14 @@ a#icon {
 	}
 	&--container-sosmed {
 		margin-top: 3rem;
+
+		@include respond(tab-land) {
+			padding-left: 3rem;
+		}
+
+		@include respond(desktop) {
+			padding-left: 3rem;
+		}
 		&-fb {
 			width: 2rem;
 		}
@@ -225,6 +281,12 @@ a#icon {
 			height: auto;
 		}
 
+		@include respond(desktop) {
+			background-image: none;
+			background-color: $purple-secondary;
+			height: auto;
+		}
+
 		&-word {
 			padding: 3rem 0 1rem 0;
 			margin-left: 8rem;
@@ -236,6 +298,10 @@ a#icon {
 				margin-left: 0;
 				width: 100%;
 				padding: 3rem 1.5rem 1rem 1.5rem;
+			}
+
+			@include respond(desktop) {
+				margin-left: 15rem;
 			}
 		}
 	}
@@ -388,13 +454,24 @@ a#icon {
 .business-field-rhm {
 	padding-top: 10rem;
 	text-align: center;
+
+	@include respond(phone) {
+		padding-top: 6rem;
+	}
 	&--heading {
 		padding-bottom: 1rem;
 		@include respond(phone) {
-			padding-bottom: 0;
+			font-size: 1rem;
+			padding-left: 4rem;
+			padding-right: 4rem;
 		}
+
 		h1 {
 			color: $color-primary;
+
+			@include respond(phone) {
+				font-size: 1.4rem;
+			}
 		}
 		p {
 			font-size: 0.8rem;
@@ -418,9 +495,8 @@ a#icon {
 			a {
 				text-decoration: none;
 			}
-			&__box01 {
+			&__box {
 				color: white;
-				background-image: url("img/img01@2x.png");
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -431,206 +507,11 @@ a#icon {
 				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 
 				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
 
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
+				@include respond(tab-land) {
+					padding: 12px;
+					height: 180px;
 				}
-			}
-			&__box02 {
-				color: white;
-				background-image: url("img/img02@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box03 {
-				color: white;
-				background-image: url("img/img03@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box04 {
-				color: white;
-				background-image: url("img/img04@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box05 {
-				color: white;
-				background-image: url("img/img05@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box06 {
-				color: white;
-				background-image: url("img/img06@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box07 {
-				color: white;
-				background-image: url("img/img07@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box08 {
-				color: white;
-				background-image: url("img/img08@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
-				&-heading {
-					font-weight: bold;
-				}
-				&-paragraph {
-					font-size: 0.9rem;
-				}
-
-				&:hover {
-					box-shadow: 0 3rem 6rem rgba(black, 0.2);
-					transform: scale(1.05);
-				}
-			}
-			&__box09 {
-				color: white;
-				background-image: url("img/img09@2x.png");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-
-				padding: 70px;
-				height: 250px;
-				border-radius: 6px;
-				box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-
-				transition: all 0.3s;
 				&-heading {
 					font-weight: bold;
 				}
@@ -648,19 +529,22 @@ a#icon {
 }
 
 .product {
+	@include respond(phone) {
+		text-align: center;
+	}
 	&-detail {
-      //background-color: red;
+		//background-color: red;
 		padding: 10rem 0 5rem 0;
 		&-content {
 			padding: 1.5rem;
-         background-color: white;
-         //background-color: orange;
-         height: auto;
-         padding-top: 6.5rem;
+			background-color: white;
+			//background-color: orange;
+			height: auto;
+			padding-top: 6.5rem;
 
-         @include respond(phone) {
-            padding-top: 2rem;
-         }
+			@include respond(phone) {
+				padding-top: 2rem;
+			}
 			&-img {
 				img {
 					display: block;
@@ -671,20 +555,33 @@ a#icon {
 			}
 
 			&-list {
-            //background-color: orangered;
+				//background-color: orangered;
+				&--data {
+					// h4 {
+					// 	padding-bottom: 2rem;
+					// }
+					&-box {
+						padding: 1rem 2rem 1rem 2rem;
+						background-color: $color-secondary;
+						color: white;
+						border-radius: .5rem;
+						display: inline-block;
+						margin-top: .5rem;
+					}
+				}
 
-            @include respond(phone) {
-               margin-top: 4rem;
-            }
+				@include respond(phone) {
+					margin-top: 4rem;
+				}
 			}
 
 			&-isi {
-            //background-color: yellow;
-            padding: 4rem 5rem 2rem 5rem;
-            @include respond(phone) {
-               padding: 0;
-               margin-top: 1rem;
-            }
+				//background-color: yellow;
+				padding: 4rem 5rem 2rem 5rem;
+				@include respond(phone) {
+					padding: 0;
+					margin-top: 1rem;
+				}
 			}
 		}
 	}
@@ -701,7 +598,7 @@ a#icon {
 }
 
 #small-news {
-	@media screen and (min-width: 25.1em) {
+	@media screen and (min-width: 480px) {
 		display: none;
 	}
 }
@@ -713,6 +610,12 @@ a#icon {
 		color: $color-primary;
 		font-size: 2rem;
 		padding-top: 9rem;
+
+		@include respond(phone) {
+			font-size: 1.4rem;
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
 
 		&-detail {
 			font-size: 0.8rem;
@@ -809,6 +712,11 @@ a#icon {
 			&-left {
 				text-align: left;
 				border-right: 1px solid #c4c4c4;
+
+				@include respond(phone) {
+					text-align: center;
+				}
+
 				img {
 					width: 12rem;
 				}
@@ -819,6 +727,15 @@ a#icon {
 					text-align: justify;
 
 					@include respond(phone) {
+						text-align: center;
+						padding-left: 2rem;
+					}
+
+					@include respond(tab-land) {
+						text-align: left;
+					}
+
+					@include respond(desktop) {
 						text-align: left;
 					}
 				}
@@ -842,6 +759,12 @@ a#icon {
 					background-color: $color-primary;
 
 					transition: 0.1s ease-in;
+
+					i {
+						@include respond(tab-land) {
+							display: none;
+						}
+					}
 					&:hover {
 						box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 						transform: translate(0, -5px);
@@ -860,6 +783,18 @@ a#icon {
 					background-color: $color-primary;
 
 					transition: 0.1s ease-in;
+
+					a {
+						text-decoration: none;
+						color: white;
+					}
+
+					i {
+						color: white;
+						@include respond(tab-land) {
+							display: none;
+						}
+					}
 					&:hover {
 						box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 						transform: translate(0, -5px);
@@ -871,11 +806,23 @@ a#icon {
 				padding-left: 2rem;
 				border-left: 1px solid #c4c4c4;
 				color: $color-primary;
+
+				@include respond(phone) {
+					padding-right: 2rem;
+				}
 				&-01 {
 					i {
 						padding: 0.3rem 0 0 0.3rem;
 						color: $color-primary;
 						font-size: 2rem;
+
+						@include respond(phone) {
+							display: none;
+						}
+
+						@include respond(tab-land) {
+							font-size: 1.3rem;
+						}
 					}
 					p {
 						text-align: left !important;
@@ -899,13 +846,21 @@ a#icon {
 		color: white;
 		height: 5rem;
 		background-color: $color-primary;
-		margin-bottom: 0;
+
+		@include respond(phone) {
+			padding-top: 28px;
+			font-size: 12px;
+		}
 	}
 }
 
 // Button
 .btn {
 	margin-top: 5rem;
+
+	@include respond(phone) {
+		margin-top: 2rem;
+	}
 	&, // berfungsi untuk membuat elemen <button> juga terbaca
     &:link,
         &:visited {
@@ -1082,15 +1037,15 @@ a#icon {
 	background-repeat: no-repeat;
 	background-size: cover;
 
-   @include respond(phone) {
-      padding: 1rem 0;
-   }
+	@include respond(phone) {
+		padding: 1rem 0;
+	}
 	.showcase-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-content: center;
 		align-items: center;
-		height: 500px;
+		height: 550px;
 		padding-top: 10rem;
 
 		@include respond(phone) {
@@ -1099,9 +1054,9 @@ a#icon {
 	}
 
 	.showcase-content {
-      //background-color: red;
-      z-index: 1;
-      
+		//background-color: red;
+		z-index: 1;
+
 		p {
 			margin-bottom: 1rem;
 		}
@@ -1116,35 +1071,46 @@ a#icon {
 	padding: 0.4rem 0.6rem;
 	border-radius: 15px;
 	margin-bottom: 0.5rem;
+
+	&-sports {
+		background-color: red;
+	}
 }
 
 .news-card {
 	text-align: center;
-   padding: 4rem 0 9rem 0;
-   
-   @include respond(phone) {
-      padding-bottom: 2rem;
-   }
+	padding: 4rem 0 9rem 0;
+
+	@include respond(phone) {
+		padding-bottom: 2rem;
+	}
 	h2 {
 		color: $color-primary;
 	}
 	&--items {
 		padding-top: 4rem;
+		a {
+			text-decoration: none;
+			color: black;
+		}
 		.card {
-         @include respond(phone) {
-            margin-bottom: 2rem;
-         }
+			@include respond(phone) {
+				margin-bottom: 2rem;
+			}
 		}
 	}
 }
 
 .berita {
+	@include respond(phone) {
+		text-align: center;
+	}
 	&-detail {
-      padding: 10rem 3rem 5rem 3rem;
-      
-      @include respond(phone) {
-         padding: 10rem 1.5rem 3rem 1.5rem;
-      }
+		padding: 10rem 3rem 5rem 3rem;
+
+		@include respond(phone) {
+			padding: 10rem 1.5rem 3rem 1.5rem;
+		}
 
 		h2 {
 			padding-top: 2rem;
@@ -1153,26 +1119,26 @@ a#icon {
 			color: $color-primary;
 		}
 		&-content {
-         width: calc(100% * 8 / 12);
+			width: calc(100% * 8 / 12);
 			padding: 1.5rem;
-         //background-color: white;
+			//background-color: white;
 			height: auto;
 
-         @include respond(phone) {
-            width: 100%;
-            padding: 0;
-         }
+			@include respond(phone) {
+				width: 100%;
+				padding: 0;
+			}
 			&--img {
 				height: 25rem;
 				//background-color: red;
 
 				background-size: cover;
 				background-position: center;
-            background-repeat: no-repeat;
-            
-            @include respond(phone) {
-               height: 15rem;
-            }
+				background-repeat: no-repeat;
+
+				@include respond(phone) {
+					height: 15rem;
+				}
 			}
 
 			&--isi {
@@ -1190,9 +1156,9 @@ a#icon {
 		}
 
 		&-card {
-         width: calc(100% * 4 / 12);
+			width: calc(100% * 4 / 12);
 			height: 40rem;
-         padding: 1rem;
+			padding: 1rem;
 
 			&--top {
 				height: auto;
@@ -1206,11 +1172,11 @@ a#icon {
 				height: auto;
 				background-color: #fff;
 				padding: 2rem 0 2rem 0;
-         }
-         
-         @include respond(phone) {
-            display: none;
-         }
+			}
+
+			@include respond(phone) {
+				display: none;
+			}
 		}
 	}
 }
@@ -1232,277 +1198,6 @@ a#icon {
 
 ul {
 	list-style: none;
-}
-
-// ------------------
-@keyframes jssorl-009-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-/*jssor slider bullet skin 051 css*/
-.jssorb051 .i {
-	position: absolute;
-	cursor: pointer;
-}
-.jssorb051 .i .b {
-	fill: #fff;
-	fill-opacity: 0.5;
-}
-.jssorb051 .i:hover .b {
-	fill-opacity: 0.7;
-}
-.jssorb051 .iav .b {
-	fill-opacity: 1;
-}
-.jssorb051 .i.idn {
-	opacity: 0.3;
-}
-
-/*jssor slider arrow skin 051 css*/
-.jssora051 {
-	display: block;
-	position: absolute;
-	cursor: pointer;
-}
-.jssora051 .a {
-	fill: none;
-	stroke: #fff;
-	stroke-width: 360;
-	stroke-miterlimit: 10;
-}
-.jssora051:hover {
-	opacity: 0.8;
-}
-.jssora051.jssora051dn {
-	opacity: 0.5;
-}
-.jssora051.jssora051ds {
-	opacity: 0.3;
-	pointer-events: none;
-}
-
-.product-moving {
-	position: relative;
-	margin: 0 auto;
-	top: 0;
-	left: 0;
-	width: 980px;
-	height: 380px;
-	overflow: hidden;
-	visibility: hidden;
-
-	@include respond(phone) {
-		overflow: hidden;
-		visibility: hidden;
-		width: 350px;
-	}
-	&__content {
-		cursor: default;
-		position: relative;
-		top: 0px;
-		left: 50px;
-		width: 880px;
-		height: 380px;
-		overflow: hidden;
-	}
-}
-
-.product-clothing-1 {
-	/*    background-color: black;*/
-	position: absolute;
-	bottom: 0;
-	left: 8%;
-
-	/*width: 0%;*/
-	width: 25rem;
-	height: 30rem;
-	/*    background-image: linear-gradient(
-				to right bottom,
-				rgba($color-grey,1),
-				rgba($color-black,1));
-			border-radius: .5rem;*/
-	transition: all 0.2s;
-
-	&:hover {
-		transform: translateY(-1rem);
-		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
-	}
-
-	&:active,
-	&:focus {
-		transform: translateY(-0.1rem);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	&__img-1 {
-		position: absolute;
-		bottom: 10%;
-		left: 10%;
-
-		/*width: 0rem;*/
-		width: 80%;
-		height: auto;
-	}
-}
-.product-clothing-2 {
-	/*    background-color: black;*/
-	position: absolute;
-	bottom: 0;
-	left: 8%;
-
-	/*width: 0%;*/
-	width: 25rem;
-	height: 30rem;
-	/*    background-image: linear-gradient(
-				to right bottom,
-				rgba($color-grey,1),
-				rgba($color-black,1));
-			border-radius: .5rem;*/
-	transition: all 0.2s;
-
-	&:hover {
-		transform: translateY(-1rem);
-		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
-	}
-
-	&:active,
-	&:focus {
-		transform: translateY(-0.1rem);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	&__img-2 {
-		position: absolute;
-		bottom: 10%;
-		left: 8%;
-
-		/*width: 0rem;*/
-		width: 80%;
-		height: auto;
-	}
-}
-.product-clothing-3 {
-	/*    background-color: black;*/
-	position: absolute;
-	bottom: 0;
-	left: 8%;
-
-	/*width: 0%;*/
-	width: 25rem;
-	height: 30rem;
-	/*    background-image: linear-gradient(
-				to right bottom,
-				rgba($color-grey,1),
-				rgba($color-black,1));
-			border-radius: .5rem;*/
-	transition: all 0.2s;
-
-	&:hover {
-		transform: translateY(-1rem);
-		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
-	}
-
-	&:active,
-	&:focus {
-		transform: translateY(-0.1rem);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	&__img-3 {
-		position: absolute;
-		bottom: 10%;
-		left: 10%;
-
-		/*width: 0rem;*/
-		width: 80%;
-		height: auto;
-	}
-}
-
-.product-clothing-4 {
-	/*    background-color: black;*/
-	position: absolute;
-	bottom: 0;
-	left: 8%;
-
-	/*width: 0%;*/
-	width: 25rem;
-	height: 30rem;
-	/*    background-image: linear-gradient(
-				to right bottom,
-				rgba($color-grey,1),
-				rgba($color-black,1));
-			border-radius: .5rem;*/
-	transition: all 0.2s;
-
-	&:hover {
-		transform: translateY(-1rem);
-		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
-	}
-
-	&:active,
-	&:focus {
-		transform: translateY(-0.1rem);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	&__img-4 {
-		position: absolute;
-		bottom: 10%;
-		left: 12%;
-
-		/*width: 0rem;*/
-		width: 80%;
-		height: auto;
-	}
-}
-
-.product-clothing-5 {
-	/*    background-color: black;*/
-	position: absolute;
-	bottom: 0;
-	left: 8%;
-
-	/*width: 0%;*/
-	width: 25rem;
-	height: 30rem;
-	/*    background-image: linear-gradient(
-				to right bottom,
-				rgba($color-grey,1),
-				rgba($color-black,1));
-			border-radius: .5rem;*/
-	transition: all 0.2s;
-
-	&:hover {
-		transform: translateY(-1rem);
-		/*        box-shadow: 0 .5rem 2rem rgba($color-grey,.2);*/
-	}
-
-	&:active,
-	&:focus {
-		transform: translateY(-0.1rem);
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	&__img-5 {
-		position: absolute;
-		bottom: 10%;
-		left: 12%;
-
-		/*width: 0rem;*/
-		width: 80%;
-		height: auto;
-	}
 }
 
 /*jssor slider loading skin spin css*/
@@ -1599,6 +1294,10 @@ ul {
 	background-image: url("img/bg-galery.jpg");
 
 	overflow: hidden;
+
+	@include respond(phone) {
+		padding-top: 3rem;
+	}
 	&__content {
 		&--form {
 			background-image: linear-gradient(rgba($color-primary, 0.95), rgba($color-secondary, 0.95));
@@ -1608,8 +1307,15 @@ ul {
 			height: 250px;
 
 			@include respond(phone) {
-				margin-top: 0;
+				margin-top: 1;
 				height: 160px;
+			}
+			@include respond(tab-land) {
+				margin-top: 3rem;
+				height: 190px;
+			}
+			@include respond(desktop) {
+				height: 210px;
 			}
 			&-inside {
 				border-radius: 0.4rem;
@@ -1630,11 +1336,24 @@ ul {
 					padding: 0 0 0 0;
 				}
 
+				@include respond(tab-land) {
+					left: 0%;
+					width: 100%;
+
+					padding: 0 0 0 0;
+				}
+
 				&-row {
 					padding: 1rem;
 					display: inline-block;
 
 					@include respond(phone) {
+						padding: 0;
+					}
+					@include respond(tab-land) {
+						padding: 0;
+					}
+					@include respond(desktop) {
 						padding: 0;
 					}
 					&-jssor {
@@ -1649,6 +1368,18 @@ ul {
 							left: 0;
 							width: 360px;
 							height: 170px;
+						}
+						@include respond(tab-land) {
+							top: -30px;
+							left: 0;
+							width: 770px;
+							height: 260px;
+						}
+						@include respond(desktop) {
+							top: -30px;
+							left: 0;
+							width: 770px;
+							height: 260px;
 						}
 
 						&__slide {
@@ -1665,11 +1396,31 @@ ul {
 								height: 160px;
 							}
 
+							@include respond(tab-land) {
+								top: 45px;
+								left: 90px;
+								width: 580px;
+								height: 160px;
+							}
+
+							@include respond(desktop) {
+								top: 45px;
+								left: 90px;
+								width: 580px;
+								height: 160px;
+							}
+
 							&-content {
 								margin-left: 2rem;
 
 								@include respond(phone) {
 									margin-left: 0;
+								}
+								@include respond(tab-land) {
+									margin-left: 2rem;
+								}
+								@include respond(desktop) {
+									margin-left: 2rem;
 								}
 							}
 						}
