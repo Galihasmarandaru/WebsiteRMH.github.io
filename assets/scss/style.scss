@@ -598,7 +598,7 @@ a#icon {
 }
 
 #small-news {
-	@media screen and (min-width: 480px) {
+	@media screen and (min-width: 481px) {
 		display: none;
 	}
 }
@@ -724,7 +724,7 @@ a#icon {
 					color: $color-primary;
 					padding-top: 1rem;
 					padding-right: 2rem;
-					text-align: justify;
+					text-align: left;
 
 					@include respond(phone) {
 						text-align: center;
@@ -762,6 +762,9 @@ a#icon {
 
 					i {
 						@include respond(tab-land) {
+							display: none;
+						}
+						@include respond(phone) {
 							display: none;
 						}
 					}
@@ -1121,7 +1124,7 @@ a#icon {
 		&-content {
 			width: calc(100% * 8 / 12);
 			padding: 1.5rem;
-			//background-color: white;
+			background-color: white;
 			height: auto;
 
 			@include respond(phone) {
@@ -1132,7 +1135,7 @@ a#icon {
 				height: 25rem;
 				//background-color: red;
 
-				background-size: cover;
+				background-size: auto;
 				background-position: center;
 				background-repeat: no-repeat;
 
@@ -1366,7 +1369,7 @@ ul {
 						@include respond(phone) {
 							top: -30px;
 							left: 0;
-							width: 360px;
+							width: 480px;
 							height: 170px;
 						}
 						@include respond(tab-land) {
@@ -1392,7 +1395,7 @@ ul {
 							@include respond(phone) {
 								top: 10px;
 								left: 90px;
-								width: 180px;
+								width: 290px;
 								height: 160px;
 							}
 
